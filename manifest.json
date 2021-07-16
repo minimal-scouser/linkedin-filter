@@ -1,0 +1,13 @@
+{
+  "name": "linkedin-filter",
+  "description": "A linkedin filter that removes 'I got goodies' and 'I got offers from 4 diff companies' posts",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["./background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "https://www.linkedin.com/feed/"
+  ]
+}
