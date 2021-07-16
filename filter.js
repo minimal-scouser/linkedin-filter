@@ -1,19 +1,4 @@
-console.log('Boom');
-// const elements =
-//   document.querySelector('main').children[2].children[1].children;
-// for (let index = 0; index < elements.length; index++) {
-//   const element = elements[index];
-//   const text = getTextFromDiv(element);
-// }
-
-// document.querySelector('body').addEventListener('scroll', (e) => {
-//   console.log("triggered");
-// })
-
-// document.querySelector('main').addEventListener('change', (e) => {
-//   console.log("changed");
-// })
-
+console.log('Injected');
 const ids = [];
 
 const listContainer = document.querySelector('main').children[2].children[1];
@@ -28,21 +13,12 @@ const callback = function (mutationsList, observer) {
     ) {
       const target = mutation.target;
       const targetId = target.getAttribute('id');
-
-      // console.log(
-      //   'A child node has been added or removed.',
-      //   mutation.target
-      //     .querySelector('.feed-shared-update-v2__description-wrapper')
-      //     .querySelector('span[dir="ltr"]').textContent
-      // );
       const parent = target.querySelector(
         '.feed-shared-update-v2__description-wrapper'
       );
       const description = parent?.querySelector('span[dir="ltr"]');
       const text = description?.textContent;
-      // target.style.border = '1px solid black';
 
-      // console.log(text);
       parent && ids.push(targetId);
       text && filterPostByText(text, target);
     }
